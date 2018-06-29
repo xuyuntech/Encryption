@@ -17,7 +17,7 @@ function encrypt(content) {
     var cipherChunks = [];
     cipherChunks.push(cipher.update(content, clearEncoding, cipherEncoding));
     cipherChunks.push(cipher.final(cipherEncoding));
-    console.log('AES加密后数据：' + cipherChunks.join(''));
+    console.log('AES加密后数据:     ' + cipherChunks.join(''));
     var crypted = crypto.publicEncrypt(pubKey, key); // 加密
     console.log('RSA加密后密码： ' + crypted);
     const decrypted = crypto.privateDecrypt(prikey, crypted); // 解密
