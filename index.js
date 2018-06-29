@@ -20,7 +20,7 @@ function encrypt(content) {
     // console.log('AES加密后数据:     ' + cipherChunks.join(''));
     var crypted = crypto.publicEncrypt(pubKey, key); // 加密
     // console.log('RSA加密后密码： ' + crypted);
-    console.log("加密完成");
+    // console.log("加密完成");
     
     const decrypted = crypto.privateDecrypt(prikey, crypted); // 解密
     // console.log('RSA解密后密码： ' + decrypted);
@@ -34,15 +34,11 @@ function encrypt(content) {
     }
     plainChunks.push(decipher.final(clearEncoding));
     // console.log("AES解密后数据: " + plainChunks.join(''));
-    console.log('解密完成');
+    // console.log('解密完成');
 
 }
 
-fs.readFile('./test.txt','utf-8',function(err,content){
-    if(err){
-        console.error(err);
-    }
-    else{
-        encrypt(content);
-    }
-})
+for (let index = 0; index < 10000; index++) {
+    encrypt(content);
+    
+}
