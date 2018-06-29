@@ -12,16 +12,18 @@ function encrypt(content) {
     var clearEncoding = 'utf8';
     var cipherEncoding = 'base64'; /*加密*/
     var algorithm = 'aes-256-cbc';
-    console.log('原始数据：' + content)
+    // console.log('原始数据：' + content)
     const cipher = crypto.createCipheriv(algorithm, key, iv);
     var cipherChunks = [];
     cipherChunks.push(cipher.update(content, clearEncoding, cipherEncoding));
     cipherChunks.push(cipher.final(cipherEncoding));
-    console.log('AES加密后数据:     ' + cipherChunks.join(''));
+    // console.log('AES加密后数据:     ' + cipherChunks.join(''));
     var crypted = crypto.publicEncrypt(pubKey, key); // 加密
-    console.log('RSA加密后密码： ' + crypted);
+    // console.log('RSA加密后密码： ' + crypted);
+    console.log("加密完成");
+    
     const decrypted = crypto.privateDecrypt(prikey, crypted); // 解密
-    console.log('RSA解密后密码： ' + decrypted);
+    // console.log('RSA解密后密码： ' + decrypted);
     // const encrypted =
     // '9ca277d880d50e33fd80032ee670b8d8';
     const decipher = crypto.createDecipheriv(algorithm, key,iv);
@@ -31,7 +33,16 @@ function encrypt(content) {
     
     }
     plainChunks.push(decipher.final(clearEncoding));
-    console.log("AES解密后数据: " + plainChunks.join(''));
+    // console.log("AES解密后数据: " + plainChunks.join(''));
+    console.log('解密完成');
 
 }
-encrypt(content);
+
+fs.readFile('./test.txt','utf-8',function(err,content){
+    if(err){
+        console.error(err);
+    }
+    else{
+        encrypt(content);
+    }
+})
