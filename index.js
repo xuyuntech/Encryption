@@ -1,7 +1,7 @@
 var crypto = require('crypto');
 var fs = require('fs');
 var path = require('path');
-var content = '320705199402031519';
+var content = '123123123';
 function encrypt(content) {
     var publicPem = fs.readFileSync(path.join(__dirname, "./pub.pem"));
     var privatePem = fs.readFileSync(path.join(__dirname, "./pri.pem"));
@@ -24,8 +24,6 @@ function encrypt(content) {
     
     const decrypted = crypto.privateDecrypt(prikey, crypted); // 解密
     // console.log('RSA解密后密码： ' + decrypted);
-    // const encrypted =
-    // '9ca277d880d50e33fd80032ee670b8d8';
     const decipher = crypto.createDecipheriv(algorithm, key,iv);
     var plainChunks = [];
     for (var i = 0; i < cipherChunks.length; i++) {
