@@ -35,16 +35,19 @@ index.js 为项目启动文件
     sys     0m0.213s
 
 10次循环调用
+
     real    0m0.090s
     user    0m0.082s
     sys     0m0.009s
 
 100次循环调用
+
     real    0m0.114s
     user    0m0.108s
     sys     0m0.009s
 
 10000次循环调用
+
     real    0m4.244s
     user    0m4.207s
     sys     0m0.077s
