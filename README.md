@@ -8,3 +8,8 @@
 ## 项目依赖
 项目依赖
 1. crypto
+
+## 项目文件说明
+pri.pem 为私钥文件
+pub.pem 为公钥文件
+index.js 为项目启动文件
