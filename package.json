@@ -7,13 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel-node index.js"
   },
-  "dependencies": {
-    "js-md5":"latest",
-    "crypto-js": "latest",
-    "document": "latest",
-    "babel-cli": "latest",
-    "babel-preset-es2015": "latest"
-  },
   "author": "",
   "license": "ISC"
 }
